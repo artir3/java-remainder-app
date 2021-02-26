@@ -8,4 +8,4 @@ COPY src /app
 COPY pom.xml /app
 COPY mvnw /app
 
-RUN mvn build
+RUN /app/mvnw spring-boot:run
