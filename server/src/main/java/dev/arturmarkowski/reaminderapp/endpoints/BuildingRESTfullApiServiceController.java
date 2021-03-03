@@ -1,10 +1,20 @@
 package dev.arturmarkowski.reaminderapp.endpoints;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.concurrent.atomic.AtomicLong;
+
+import dev.arturmarkowski.remainderapp.models.Greeting;
+
+/*
+this endpoint was created based onb this site:
+https://spring.io/guides/gs/rest-service/
+ */
 @RestController
-public class HelloController {
+public class BuildingRESTfullApiServiceController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
