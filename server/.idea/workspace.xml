@@ -7,9 +7,8 @@
     <list default="true" id="99402350-b018-499a-bc9b-099f186bb530" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/endpoints/ConsumingRESTfullApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/endpoints/ConsumingRESTFullApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Value.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/endpoints/ConsumingRESTFullApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/endpoints/ConsumingRESTFullApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Greeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/arturmarkowski/reaminderapp/models/Greeting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
