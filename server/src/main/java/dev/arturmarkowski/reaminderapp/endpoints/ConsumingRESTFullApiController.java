@@ -5,7 +5,7 @@ import dev.arturmarkowski.remainderapp.models.Greeting;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
@@ -15,18 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-@RestController
+import java.util.Optional;
+
+/*
+this endpoint was created based onb this site:
+https://spring.io/guides/gs/consuming-rest/
+ */
+@RestController()
 public class ConsumingRESTFullApiController {
 
-    private final RestConsumer restConsumer;
+    @Autowired
+    private RestConsumer restConsumer;
 
-    public ConsumingRESTFullApiController(RestConsumer restConsumer) {
-        this.restConsumer = restConsumer;
-    }
-
-    @GetMapping(value = "/restconsumer")
-    public String get(@RequestParam(name = "path",defaultValue = "http://127.0.0.1:8080/greeting") String path) {
-        return restConsumer.run(path, dev.arturmarkowski.remainderapp.models.Greeting.class);
+    @GetMapping(value = "/api/consuming/restconsumer")
+    public String get(@RequestParam(name = "path",defaultValue = "http://127.0.0.1:8080/api/building/greeting") String path) {
+        return restConsumer.run(path);
     }
 
 
@@ -36,7 +39,7 @@ public class ConsumingRESTFullApiController {
 class RestConsumer {
 
     private static final Logger log = LoggerFactory.getLogger(Main.class);
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     RestConsumer(RestTemplateBuilder builder) {
         this.restTemplate = this.restTemplate(builder);
@@ -47,11 +50,11 @@ class RestConsumer {
         return builder.build();
     }
 
-    public  String run(String url, Class type) {
+    public  String run(String url) {
         var result = "Default request";
         try {
-            var quote = restTemplate.getForObject(url, type);
-            result = quote.toString();
+            var quote = Optional.ofNullable(restTemplate.getForObject(url, Greeting.class));
+            result = quote.isPresent() ? quote.toString() : result;
         } catch (HttpClientErrorException e) {
             log.error("Given URL can not be reached", e);
         } catch (Exception e) {

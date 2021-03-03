@@ -13,17 +13,17 @@ import dev.arturmarkowski.remainderapp.models.Greeting;
 this endpoint was created based onb this site:
 https://spring.io/guides/gs/rest-service/
  */
-@RestController
+@RestController()
 public class BuildingRESTfullApiServiceController {
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
-	@RequestMapping("/")
+	@RequestMapping("/api/building/")
 	public String index() {
 		return "Greetings from Spring Boot!";
 	}
 
-	@GetMapping("/greeting")
+	@GetMapping("/api/building/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
